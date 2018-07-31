@@ -27,3 +27,9 @@ X = oneHotEncoder.fit_transform(X).toarray()
 # Split the dataset into training and test sets
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+
+# Feature scaling
+from sklearn.preprocessing import StandardScaler
+StandardScaler_X = StandardScaler()
+X_train = StandardScaler_X.fit_transform(X_train)
+X_test = StandardScaler_X.transform(X_test)
